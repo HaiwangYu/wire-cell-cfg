@@ -140,7 +140,7 @@ local parallel_graph = f.fanpipe('DepoSetFanout', parallel_pipes, 'FrameFanin', 
 //local frameio = io.numpy.frames(output);
 local sink = sim.frame_sink;
 
-local graph = g.pipeline([depos, rootfile_creation_depos, drifter, bagger, parallel_graph, sink]);
+local graph = g.pipeline([depos, drifter, bagger, parallel_graph, sink]);
 //local graph = g.pipeline([depos, drifter, bagger, sim.splusn, multi_magnify.magnify_pipeline, sink]);
 
 local app = {

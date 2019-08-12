@@ -29,7 +29,7 @@ function(tag, tools, outputfile) {
       type: 'MagnifySink',
       name: 'mag%s%d' % [tag, n],  // traces from source have NO tag
       data: {
-        output_filename: outputfile,
+        output_filename: outputfile+'-%d.root' % n,
         // root_file_mode: if (n == 0 && std.startsWith(tag,"orig")) then "RECREATE" else "UPDATE",
         root_file_mode: 'UPDATE',
         frames: ['%s%d' % [tag, n]],
@@ -46,7 +46,7 @@ function(tag, tools, outputfile) {
       type: 'MagnifySink',
       name: 'mag%s%d' % [tag, n],
       data: {
-        output_filename: outputfile,
+        output_filename: outputfile+'-%d.root' % n,
         //root_file_mode: if (n == 0 && std.startsWith(tag,"orig")) then "RECREATE" else "UPDATE",
         root_file_mode: 'UPDATE',
         summaries: ['%s%d' % [tag, n]],  // note that if tag set, each apa should have a tag set for FrameFanin
